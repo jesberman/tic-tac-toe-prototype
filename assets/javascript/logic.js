@@ -16,6 +16,9 @@ let maxClicks = 5;
 
 let playerWin = false;
 
+console.log("Player Win Var:");
+console.log(playerWin);
+
 let tiedGame = true;
 
 let oMove;
@@ -92,15 +95,19 @@ function playerWinCheck() {
         $("#cell2").css("color", "red");
         deactivateClicks();
         setTimeout(function () { alert("You Win!"); }, 50);
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell3 === "x" && xCell4 === "x" && xCell5 === "x") {
-        tiedGame = false;        
+        tiedGame = false;
         playerWin = true;
         $("#cell3").css("color", "red");
         $("#cell4").css("color", "red");
         $("#cell5").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell6 === "x" && xCell7 === "x" && xCell8 === "x") {
         tiedGame = false;
@@ -110,6 +117,8 @@ function playerWinCheck() {
         $("#cell8").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell0 === "x" && xCell3 === "x" && xCell6 === "x") {
         tiedGame = false;
@@ -119,6 +128,8 @@ function playerWinCheck() {
         $("#cell6").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell1 === "x" && xCell4 === "x" && xCell7 === "x") {
         tiedGame = false;
@@ -128,6 +139,8 @@ function playerWinCheck() {
         $("#cell7").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+        console.log(playerWin);
     }
     if (xCell2 === "x" && xCell5 === "x" && xCell8 === "x") {
         tiedGame = false;
@@ -137,6 +150,8 @@ function playerWinCheck() {
         $("#cell8").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell0 === "x" && xCell4 === "x" && xCell8 === "x") {
         tiedGame = false;
@@ -146,6 +161,8 @@ function playerWinCheck() {
         $("#cell8").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
     if (xCell2 === "x" && xCell4 === "x" && xCell6 === "x") {
         tiedGame = false;
@@ -155,11 +172,13 @@ function playerWinCheck() {
         $("#cell6").css("color", "red");
         setTimeout(function () { alert("You Win!"); }, 50);
         deactivateClicks();
+        console.log("Player Win Var:");
+console.log(playerWin);
     }
 }
 
 function playerLoseCheck() {
-    if (playerWin===true){
+    if (playerWin === true) {
         return;
     }
     if (xCell0 === "o" && xCell1 === "o" && xCell2 === "o") {
@@ -345,6 +364,9 @@ function markX8() {
 }
 
 $("#restart").click(function () {
+    playerWin = false;
+    console.log("Player Win Var:");
+    console.log(playerWin);
     availableCells = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     maxClicks = 5;
     document.getElementById("cell0").innerHTML = "";
@@ -356,7 +378,7 @@ $("#restart").click(function () {
     document.getElementById("cell6").innerHTML = "";
     document.getElementById("cell7").innerHTML = "";
     document.getElementById("cell8").innerHTML = "";
-    document.getElementById("rewind").onclick = function(){
+    document.getElementById("rewind").onclick = function () {
         rewind();
     };
     document.getElementById("cell0").onclick = function () {
